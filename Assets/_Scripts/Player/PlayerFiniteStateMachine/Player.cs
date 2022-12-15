@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Trustedaid.Weapons;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
     private PlayerData playerData;
     #endregion
 
+    //---------------------------------------------------------------------------------------------
     #region Components
     public Core Core { get; private set; }
     public Animator Anim { get; private set; }
@@ -36,16 +38,24 @@ public class Player : MonoBehaviour
     public Transform DashDirectionIndicator { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
     #endregion
+    //---------------------------------------------------------------------------------------------
+    #region Other Variables   
 
-    #region Other Variables         
 
     private Vector2 workspace;
-    #endregion
 
+    private Weapon primaryWeapon;
+    private Weapon secondaryWeapon;
+    #endregion
+    //---------------------------------------------------------------------------------------------
     #region Unity Callback Functions
     private void Awake()
     {
         Core = GetComponentInChildren<Core>();
+
+        primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
+        secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
+
 
         StateMachine = new PlayerStateMachine();
 
@@ -62,8 +72,9 @@ public class Player : MonoBehaviour
         DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "crouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "crouchMove");
-        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
-        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
+        PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon);
+        SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon);
+
     }
 
     private void Start()
