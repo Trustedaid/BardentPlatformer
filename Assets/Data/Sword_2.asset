@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919e69626df46074ebd82d3a350692f6, type: 3}
+  m_Name: Sword_2
+  m_EditorClassIdentifier: 
+  <NumberOfAttack>k__BackingField: 3
+  <ComponentData>k__BackingField:
+  - rid: 4302349859303194631
+  - rid: 4302349859303194632
+  references:
+    version: 2
+    RefIds:
+    - rid: 4302349859303194631
+      type: {class: WeaponSpriteData, ns: Trustedaid.Weapons.Components.ComponentData,
+        asm: Assembly-CSharp}
+      data:
+        <AttackData>k__BackingField:
+        - <Sprites>k__BackingField:
+          - {fileID: -1967564528, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -473506242, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: 556800320, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -1073337355, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -1027239355, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+        - <Sprites>k__BackingField:
+          - {fileID: 207751154, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -938561954, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: 1590197071, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -1799207902, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: 729706791, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+        - <Sprites>k__BackingField:
+          - {fileID: -1743000703, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -137332159, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -1597333113, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: -1441302668, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+          - {fileID: 952345970, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
+    - rid: 4302349859303194632
+      type: {class: MovementData, ns: Trustedaid.Weapons.Components.ComponentData,
+        asm: Assembly-CSharp}
+      data:
+        <AttackData>k__BackingField:
+        - <Direction>k__BackingField: {x: 1, y: 0}
+          <Velocity>k__BackingField: 3
+        - <Direction>k__BackingField: {x: 1, y: 0}
+          <Velocity>k__BackingField: 4
+        - <Direction>k__BackingField: {x: 5, y: 5}
+          <Velocity>k__BackingField: 10

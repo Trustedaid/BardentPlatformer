@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Trustedaid.CoreSystem;
 using UnityEngine;
 
 public class PlayerState
