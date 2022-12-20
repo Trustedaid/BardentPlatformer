@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Trustedaid.Assets._Scripts.Weapons.Components.ComponentData.AttackData
+namespace Trustedaid.Weapons.Components
 {
      [Serializable]
-    public class AttackSprites
+    public class AttackSprites : AttackData
     {
         [field: SerializeField] public Sprite[] Sprites { get; private set; }
     }

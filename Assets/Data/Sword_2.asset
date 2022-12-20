@@ -20,7 +20,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 4302349859303194631
-      type: {class: WeaponSpriteData, ns: Trustedaid.Weapons.Components.ComponentData,
+      type: {class: WeaponSpriteData, ns: Trustedaid.Weapons.Components,
         asm: Assembly-CSharp}
       data:
         <AttackData>k__BackingField:
@@ -43,7 +43,7 @@ MonoBehaviour:
           - {fileID: -1441302668, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
           - {fileID: 952345970, guid: 11e1128d7366ac44e9ecf27b6ad0935e, type: 3}
     - rid: 4302349859303194632
-      type: {class: MovementData, ns: Trustedaid.Weapons.Components.ComponentData,
+      type: {class: MovementData, ns: Trustedaid.Weapons.Components,
         asm: Assembly-CSharp}
       data:
         <AttackData>k__BackingField:

@@ -1,10 +1,10 @@
-using Trustedaid.Assets._Scripts.Weapons.Components.ComponentData.AttackData;
+using Trustedaid.Weapons.Components;
 using UnityEngine;
 
-namespace Trustedaid.Weapons.Components.ComponentData
+namespace Trustedaid.Weapons.Components
 {
-    public class MovementData : ComponentData
+    public class MovementData : ComponentData<AttackMovement>
     {
-        [field: SerializeField] public AttackMovement[] AttackData { get; private set; }
+        
     }
 }

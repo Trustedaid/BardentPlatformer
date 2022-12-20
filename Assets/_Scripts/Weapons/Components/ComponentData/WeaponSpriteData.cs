@@ -1,15 +1,12 @@
-﻿using Trustedaid.Assets._Scripts.Weapons.Components.ComponentData.AttackData;
+﻿using Trustedaid.Weapons.Components;
 
 using UnityEngine;
 
-namespace Trustedaid.Weapons.Components.ComponentData
+namespace Trustedaid.Weapons.Components
 {
-    public class WeaponSpriteData : ComponentData
+    public class WeaponSpriteData : ComponentData<AttackSprites>
 
     {
-        [field: SerializeField] public AttackSprites [] AttackData { get; private set; }
-
-
     }
 
 }

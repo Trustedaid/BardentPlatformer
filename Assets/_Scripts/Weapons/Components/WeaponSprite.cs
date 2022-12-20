@@ -1,19 +1,17 @@
 ﻿using System;
-using Trustedaid.Weapons.Components.ComponentData;
+using Trustedaid.Weapons.Components;
 using UnityEngine;
 
 namespace Trustedaid.Weapons.Components
 {
-    public class WeaponSprite : WeaponComponent
+    public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
     {
         private SpriteRenderer baseSpriteRenderer;
         private SpriteRenderer weaponSpriteRenderer;
 
 
-
         private int currentWeaponSpriteIndex;
 
-        private WeaponSpriteData data;
 
         protected override void HandleEnter()
         {
@@ -31,18 +29,17 @@ namespace Trustedaid.Weapons.Components
                 return;
             }
 
-            var currentAttackSprites = data.AttackData[weapon.CurrentAttackCounter].Sprites;
+            var currentAttackSprites = currentAttackData.Sprites;
 
             if (currentWeaponSpriteIndex >= currentAttackSprites.Length)
             {
-                Debug.LogWarning($"{ weapon.name} weapon sprites length mismatch");
+                Debug.LogWarning($"{weapon.name} weapon sprites length mismatch");
                 return; // 24.09
             }
 
             weaponSpriteRenderer.sprite = currentAttackSprites[currentWeaponSpriteIndex];
 
             currentWeaponSpriteIndex++;
-
         }
 
 
@@ -66,7 +63,6 @@ namespace Trustedaid.Weapons.Components
             baseSpriteRenderer.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
 
             weapon.OnEnter += HandleEnter;
-
         }
 
         protected override void OnDisable()
@@ -77,6 +73,4 @@ namespace Trustedaid.Weapons.Components
             weapon.OnEnter -= HandleEnter;
         }
     }
-
-   
 }

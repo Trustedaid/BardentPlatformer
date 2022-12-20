@@ -1,22 +1,18 @@
 ﻿using System.Collections;
-using Trustedaid.Weapons.Components.ComponentData;
+using Trustedaid.Weapons.Components;
 using UnityEngine;
 
 namespace Trustedaid.Weapons.Components
 {
-    public class Movement : WeaponComponent
+    public class Movement : WeaponComponent<MovementData, AttackMovement>
     {
         private CoreSystem.Movement coreMovement;
 
         private CoreSystem.Movement CoreMovement =>
             coreMovement ? coreMovement : Core.GetCoreComponent(ref coreMovement);
 
-        private MovementData data;
-
         private void HandleStartMovement()
         {
-            var currentAttackData = data.AttackData[weapon.CurrentAttackCounter];
-            
             CoreMovement.SetVelocity(currentAttackData.Velocity, currentAttackData.Direction, CoreMovement.FacingDirection);
         }
 
@@ -26,12 +22,6 @@ namespace Trustedaid.Weapons.Components
             CoreMovement.SetVelocityZero();
         }
 
-        protected override void Awake()
-        {
-            base.Awake();
-
-            data = weapon.Data.GetData<MovementData>();
-        }
         protected override void OnEnable()
         {
             base.OnEnable();

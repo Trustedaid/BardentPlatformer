@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Trustedaid.Weapons.Components.ComponentData;
+using Trustedaid.Weapons.Components;
 using UnityEngine;
 
 
@@ -22,9 +22,8 @@ namespace Trustedaid.Weapons
 
         [ContextMenu("Add Sprite Data")]
         private void AddSpriteData() => ComponentData.Add(new WeaponSpriteData());
+
         [ContextMenu("Add Movement Data")]
         private void AddMovementData() => ComponentData.Add(new MovementData());
-        
-
     }
 }
